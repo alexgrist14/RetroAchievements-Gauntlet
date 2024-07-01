@@ -35,13 +35,13 @@ const Login: FC = () => {
 
   const handleSignUp: SubmitHandler<IAuth> = (data) => {
     setError(null);
-    const singUpDto: IAuth = {
+    const signUpDto: IAuth = {
       name: data.name,
       email: data.email,
       password: data.password,
     };
 
-    signup(singUpDto)
+    signup(signUpDto)
       .then(() => dispatch(setUser({ email: data.email, user: "123" })))
       .catch((err) => setError(err.message));
   };
